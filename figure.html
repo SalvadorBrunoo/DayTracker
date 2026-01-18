@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Year Progress Tracker</title>
+    <style>
+        /* Screen Layout */
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            margin: 0;
+            padding-top: 40px;
+            background-color: #f4f4f4;
+            font-family: sans-serif;
+        }
+
+		/* downlaod button */
+		#print-btn {
+			position: fixed;
+			bottom: 30px;  /* Changed from top to bottom */
+			right: 30px;
+			padding: 12px 24px;
+			background: #000;
+			color: #fff;
+			border: none;
+			border-radius: 6px;
+			cursor: pointer;
+			font-family: sans-serif;
+			font-weight: bold;
+			box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+			z-index: 1000; /* Ensures it stays above the grid on small screens */
+		}
+
+        #print-btn:hover {
+            opacity: 0.8;
+        }
+
+        svg {
+            background-color: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Agency FB for the Year */
+        .year-text {
+            font-family: 'Agency FB', 'Arial Narrow', sans-serif;
+            font-size: 45px;
+            /*font-weight: bold;*/
+            letter-spacing: 4px;
+        }
+        .label-text {
+            font-family: sans-serif;
+            font-size: 11px;
+            fill: #999;
+        }
+        .axis-text {
+            font-family: sans-serif;
+            font-size: 12px;
+            fill: #666;
+        }
+
+        /* PDF / Print Styling */
+        @media print {
+            @page {
+                size: A4;
+                margin: 0;
+            }
+            body {
+                background-color: white;
+                padding-top: 0;
+                justify-content: center; /* Center vertically on A4 */
+            }
+            #print-btn {
+                display: none; /* Hide button on PDF */
+            }
+            svg {
+                box-shadow: none;
+                width: 100%;
+                height: auto;
+                max-height: 297mm; /* Ensure it fits A4 height */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <button id="print-btn" onclick="window.print()">Download / Print PDF</button>
+
+    <svg id="calendarSvg" width="500" height="900" viewBox="0 0 500 900" xmlns="http://www.w3.org/2000/svg">
+        <text id="yearDisplay" x="262" y="65" text-anchor="middle" class="year-text">----</text>
+        
+        <text x="262" y="100" text-anchor="middle" class="axis-text">DAY →</text>
+        <text x="30" y="480" text-anchor="middle" class="axis-text" transform="rotate(-90 30,480)">← WEEK</text>
+
+	<g class="label-text">
+		<text x="76" y="130" text-anchor="middle">SUN</text>
+		<text x="238" y="130" text-anchor="middle">SAT</text>
+		<text x="285" y="130" text-anchor="middle">SUN</text>
+		<text x="447" y="130" text-anchor="middle">SAT</text>
+	</g>
+
+        <g id="grid" transform="translate(65, 145)"></g>
+    </svg>
+
+<script>
+    const grid = document.getElementById('grid');
+    const yearDisplay = document.getElementById('yearDisplay');
+    const svgNS = "http://www.w3.org/2000/svg";
+    
+    const now = new Date();
+    const currentYear = now.getFullYear();
+    yearDisplay.textContent = currentYear;
+
+    // Weekday Offset (Mon=0, Sun=6)
+    const jan1 = new Date(currentYear, 0, 1);
+    const dayOffset = (jan1.getDay() + 6) % 7; 
+
+    // Current Day Calculation
+    const startOfYear = new Date(currentYear, 0, 0);
+    const diff = now - startOfYear;
+    const oneDay = 1000 * 60 * 60 * 24;
+    const currentDayOfYear = Math.floor(diff / oneDay);
+
+    const squareSize = 22;
+    const spacing = 5;
+    const step = squareSize + spacing; 
+    const midGap = 20;
+    
+    const isLeap = (y) => (y % 4 === 0 && y % 100 !== 0) || (y % 400 === 0);
+    const daysInYear = isLeap(currentYear) ? 366 : 365;
+    const totalSlots = daysInYear + dayOffset;
+
+    for (let i = 0; i < totalSlots; i++) {
+        const r = Math.floor(i / 14);
+        const c = i % 14;
+
+        // Row Labels (4, 16, 32, 48)
+        if (c === 0) {
+            const currentWeekVal = (r + 1) * 2; 
+            const displayWeeks = [4, 16, 32, 48];
+            if (displayWeeks.includes(currentWeekVal)) {
+                const txt = document.createElementNS(svgNS, "text");
+                txt.setAttribute("x", "-25");
+                txt.setAttribute("y", r * step + 15);
+                txt.setAttribute("class", "label-text");
+                txt.textContent = currentWeekVal;
+                grid.appendChild(txt);
+            }
+        }
+
+        if (i >= dayOffset) {
+			const rect = document.createElementNS(svgNS, "rect");
+			const xGap = c >= 7 ? midGap : 0;
+			
+			rect.setAttribute("x", c * step + xGap);
+			rect.setAttribute("y", r * step);
+			rect.setAttribute("width", squareSize);
+			rect.setAttribute("height", squareSize);
+			rect.setAttribute("rx", "4"); 
+
+			// Calculate specific date for this square to determine the month
+			const dayOfThisSquare = i - dayOffset + 1;
+			const dateOfSquare = new Date(currentYear, 0, dayOfThisSquare);
+			const month = dateOfSquare.getMonth() + 1; // 1 = Jan, 2 = Feb...
+			const isPairMonth = (month % 2 === 0);
+
+			if (dayOfThisSquare <= currentDayOfYear) {
+				rect.setAttribute("fill", "black");
+			} else {
+				// If it's a pair month (Feb, Apr, etc.), use light gray, else none/white
+				rect.setAttribute("fill", "none");
+				rect.setAttribute("stroke", isPairMonth ? "black" : "gray");
+				rect.setAttribute("stroke-width", "1");
+			}
+			grid.appendChild(rect);
+		}
+    }
+</script>
+</body>
+</html>
