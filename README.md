@@ -8,7 +8,9 @@ The main idea here is to create a high-quality, printable version of your year. 
 
 No automation. No **smart** reminders. **Just you, a pen, and the cold, hard truth of a grid**. 
 It’s designed to be a physical **shame-o-meter** to help you track exactly how many days you’ve skipped a task by lying to yourself and saying, 
+
 ####"I'll just do it tomorrow." 
+
 Spoiler alert: Tomorrow is usually a very busy day.
 
 ---
