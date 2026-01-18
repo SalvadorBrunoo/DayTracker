@@ -11,6 +11,10 @@ It’s designed to be a physical **shame-o-meter** to help you track exactly how
 #### "I'll just do it tomorrow." 
 Spoiler alert: Tomorrow is usually a very busy day.
 
+## PREVIEW:
+
+[Preview PDF file](https://github.com/SalvadorBrunoo/DayTracker/blob/main/Preview%20-%20Year%20Progress%20Tracker.pdf)
+
 ---
 
 ### ✨ Features
