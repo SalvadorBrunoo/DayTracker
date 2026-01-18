@@ -2,15 +2,21 @@
 
 A minimalist, vector-based **Life Progress Tracker** that automatically updates based on your system clock. This tool visualizes the passing of the year using a "weekly dots" grid, specifically calibrated for **2026** with a Sunday-start alignment.
 
+It's a copy from "https://www.weeklydots.com/" -> If this tool helps you get your life together, consider buying them a coffee to keep the inspiration flowing!!!
+
+The main idea here is to create a high-quality, printable version of your year. While the digital version is cool, the real magic happens when you print it out and physically mark your progress.
+
+No automation. No **smart** reminders. Just you, a pen, and the cold, hard truth of a grid. It’s designed to be a physical **shame-o-meter** to help you track exactly how many days you’ve skipped a task by lying to yourself and saying, "I'll just do it tomorrow." Spoiler alert: Tomorrow is usually a very busy day.
+
 ### ✨ Features
 
-	**Real-time Progress:** Automatically fills squares based on the current day of the year.
-	**Vector Fidelity:** Built entirely with SVG, ensuring perfect clarity at any zoom level or print size.
-	**A4 Optimized:** Includes a dedicated **Print** button (bottom-right) that formats and centers the calendar perfectly on an A4 page for PDF export.
-	**Weekday Alignment:** Mathematically accurate grid that accounts for the January 1st weekday offset (starts on a Thursday for 2026).
-	**Visual Organization: 7+7 Layout:** Columns are split into two groups of seven for better scannability.
-	**Month Shading:** Even-numbered (pair) months are shaded in a light gray to help distinguish time periods.
-	**Agency FB Styling:** The year is styled with a modern, high-impact font, shifted 5px right for unique balance.
+1.	**Real-time Progress:** Automatically fills squares based on the current day of the year.
+2.	**Vector Fidelity:** Built entirely with SVG, ensuring perfect clarity at any zoom level or print size.
+3.	**A4 Optimized:** Includes a dedicated **Print** button (bottom-right) that formats and centers the calendar perfectly on an A4 page for PDF export.
+4.	**Weekday Alignment:** Mathematically accurate grid that accounts for the January 1st weekday offset (starts on a Thursday for 2026).
+5.	**Visual Organization: 7+7 Layout:** Columns are split into two groups of seven for better scannability.
+6.	**Month Shading:** Even-numbered (pair) months are shaded in a light gray to help distinguish time periods.
+7.	**Agency FB Styling:** The year is styled with a modern, high-impact font, shifted 5px right for unique balance.
 
 ---
 
