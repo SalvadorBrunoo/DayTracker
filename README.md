@@ -1,12 +1,17 @@
 ## 📅 2026 Dynamic Life Progress Tracker
 
-A minimalist, vector-based **Life Progress Tracker** that automatically updates based on your system clock. This tool visualizes the passing of the year using a "weekly dots" grid, specifically calibrated for **2026** with a Sunday-start alignment.
+A minimalist, vector-based **Life Progress Tracker** that automatically updates based on your system clock.
 
 It's a copy from "https://www.weeklydots.com/" -> If this tool helps you get your life together, consider buying them a coffee to keep the inspiration flowing!!!
 
 The main idea here is to create a high-quality, printable version of your year. While the digital version is cool, the real magic happens when you print it out and physically mark your progress.
 
-No automation. No **smart** reminders. Just you, a pen, and the cold, hard truth of a grid. It’s designed to be a physical **shame-o-meter** to help you track exactly how many days you’ve skipped a task by lying to yourself and saying, "I'll just do it tomorrow." Spoiler alert: Tomorrow is usually a very busy day.
+No automation. No **smart** reminders. **Just you, a pen, and the cold, hard truth of a grid**. 
+It’s designed to be a physical **shame-o-meter** to help you track exactly how many days you’ve skipped a task by lying to yourself and saying, 
+####"I'll just do it tomorrow." 
+Spoiler alert: Tomorrow is usually a very busy day.
+
+---
 
 ### ✨ Features
 
