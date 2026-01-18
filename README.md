@@ -5,11 +5,17 @@ A minimalist, vector-based **Life Progress Tracker** that automatically updates 
 ### ✨ Features
 
 **Real-time Progress:** Automatically fills squares based on the current day of the year.
+
 **Vector Fidelity:** Built entirely with SVG, ensuring perfect clarity at any zoom level or print size.
+
 **A4 Optimized:** Includes a dedicated **Print** button (bottom-right) that formats and centers the calendar perfectly on an A4 page for PDF export.
+
 **Weekday Alignment:** Mathematically accurate grid that accounts for the January 1st weekday offset (starts on a Thursday for 2026).
+
 **Visual Organization: 7+7 Layout:** Columns are split into two groups of seven for better scannability.
+
 **Month Shading:** Even-numbered (pair) months are shaded in a light gray to help distinguish time periods.
+
 **Agency FB Styling:** The year is styled with a modern, high-impact font, shifted 5px right for unique balance.
 
 ---
