@@ -29,7 +29,7 @@ Spoiler alert: Tomorrow is usually a very busy day.
 
 This is a **zero-dependency** project. Everything is contained within a single HTML file.
 
-1.  Clone the repository or download the `index.html` file.
+1.  Clone the repository or download the `figure.html` file.
 2.  Open the file in any modern web browser (Chrome, Firefox, Safari, Edge).
 3.  To save as a PDF:
 	Click the **Download PDF** button in the bottom-right corner.
