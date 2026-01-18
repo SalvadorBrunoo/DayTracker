@@ -1,8 +1,8 @@
-\# 📅 2026 Dynamic Life Progress Tracker
+## 📅 2026 Dynamic Life Progress Tracker
 
 A minimalist, vector-based \*\*Life Progress Tracker\*\* that automatically updates based on your system clock. This tool visualizes the passing of the year using a "weekly dots" grid, specifically calibrated for \*\*2026\*\* with a Monday-start alignment.
 
-\## ✨ Features
+### ✨ Features
 
 \* \*\*Real-time Progress:\*\* Automatically fills squares based on the current day of the year.
 \* \*\*Vector Fidelity:\*\* Built entirely with SVG, ensuring perfect clarity at any zoom level or print size.
@@ -14,7 +14,7 @@ A minimalist, vector-based \*\*Life Progress Tracker\*\* that automatically upda
 
 ---
 
-\## 🚀 How to Use
+### 🚀 How to Use
 
 This is a \*\*zero-dependency\*\* project. Everything is contained within a single HTML file.
 
@@ -26,7 +26,7 @@ This is a \*\*zero-dependency\*\* project. Everything is contained within a sing
 
 ---
 
-\## 🛠️ Customization
+### 🛠️ Customization
 
 You can easily modify the following variables inside the `<script>` tag:
 
@@ -39,7 +39,7 @@ You can easily modify the following variables inside the `<script>` tag:
 
 ---
 
-\## 📂 File Structure
+### 📂 File Structure
 
 ```text
 ├── index.html   # Main application code (HTML/CSS/JS/SVG)
