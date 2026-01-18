@@ -115,7 +115,7 @@
 
     // Weekday Offset (Mon=0, Sun=6)
     const jan1 = new Date(currentYear, 0, 1);
-    const dayOffset = (jan1.getDay() + 6) % 7; 
+    const dayOffset = jan1.getDay(); 
 
     // Current Day Calculation
     const startOfYear = new Date(currentYear, 0, 0);
